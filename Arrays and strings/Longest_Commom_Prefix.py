@@ -18,4 +18,5 @@ for i in zip(*strs):
         break
 
 print("".join(output))
+
     

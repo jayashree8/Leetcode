@@ -7,6 +7,7 @@ Input: s = "anagram", t = "nagaram"
 Output: true
 '''
 
+''' MY CODE '''
 s = "anagram"
 t = "nagaram"
 
@@ -24,3 +25,27 @@ for i in range(len(t)):
         dict2[t[i]] = 1
     else:
         dict2[t[i]] += 1
+
+print(dict1==dict2)
+
+''' OPTIMUM CODE '''
+from collections import Counter
+flag = 0
+if len(s) != len(t):
+    flag = 1
+
+s_freq = Counter(s)
+t_freq = Counter(t)
+
+print(s_freq,t_freq)
+
+for char in t_freq:
+    if t_freq[char] == s_freq[char]:
+        continue
+    else:
+        flag =1
+
+if flag==1:
+    print('False')
+else:
+    print('True')
